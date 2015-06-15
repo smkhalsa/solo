@@ -1,6 +1,14 @@
 <div ng-controller="CanvasController" layout="row" layout-align="center center">
   <!-- <div>{{current}}</div> -->
   <div layout="column" ng-repeat="column in columns" layout-padding flex="20">
+    <md-content>
+      <form name="submitItem" ng-submit="addItem(text,column)">
+        <md-input-container md-no-float>
+          <!-- <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon> -->
+          <input ng-model="text" type="text" placeholder="Add new item">
+        </md-input-container>
+      </form>
+    </md-content>
     <div layout="row" ng-repeat="node in column" layout-padding>
       <div ng-click="setCurrent(node, $parent.$index)">{{node.title}}</div></div>
   </div>
