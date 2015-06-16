@@ -1,6 +1,6 @@
 <div ng-controller="CanvasController" layout="column" >
   <div layout="row" layout-align="center">
-    <div layout="column" ng-repeat="column in columns" layout-padding flex="50" flex-gt-md="20">
+    <div layout="column" ng-repeat="column in columns"  flex="50" flex-gt-md="20">
       <div class="searchArea" layout="row" layout-align="center center" layout-margin>
         <md-content>
           <form name="submitItem" ng-submit="addItem(text); text=''"ng-show="colIndex === $index-1">
@@ -11,7 +11,7 @@
           </form>
         </md-content>
       </div>
-      <div class="grey" layout="row" ng-repeat="node in column" layout-padding ng-click="setCurrent(node, $index, $parent.$index)">{{node.title}}</div>
+      <div ng-class=" node === currentNode || $parent.$index === colIndex+1 ? 'selected' : 'normal'" layout="row" ng-repeat="node in column" layout-padding ng-click="setCurrent(node, $index, $parent.$index)">{{node.title}}</div>
     </div>
   </div>
   <!-- <div>{{current}}</div> -->

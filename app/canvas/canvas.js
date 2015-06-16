@@ -16,7 +16,9 @@ angular.module('app.canvas', ['firebase'])
     }
 
     $scope.setCurrent = function(node, index, colIndex) {
+      $scope.currentCol = colIndex;
       $scope.colIndex = colIndex;
+      $scope.currentNode = node;
       $scope.colPaths.splice(colIndex+1);
       $scope.colPaths.push('/'+node.$id+'/children');
       $scope.columns.splice(colIndex+1);
@@ -27,4 +29,6 @@ angular.module('app.canvas', ['firebase'])
     $scope.colPaths = ['']
     $scope.colIndex = -1;
     $scope.index = 0;
+    $scope.currentNode;
+    $scope.currentCol;
   })
