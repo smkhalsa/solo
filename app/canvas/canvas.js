@@ -4,10 +4,9 @@ angular.module('resolver.canvas', [
 
   .controller('CanvasController', function($scope, Nodes) {
 
-    $scope.addItem = function(newNode){
-      // var path = $scope.colPaths.slice().join('');
-      // var ref = new Firebase("https://resolver.firebaseio.com/nodes" + path);
-      // ref.push({title: newNode});
+    $scope.addItem = function(nodeTitle){
+      var parentPath = $scope.colPaths.slice().join('');
+      Nodes.addChild(nodeTitle, parentPath)
     }
 
     $scope.columns = [Nodes.getNodeChildren('/')];
@@ -25,6 +24,5 @@ angular.module('resolver.canvas', [
       $scope.colPaths.push('/'+node.$id+'/children');
       $scope.columns.splice(colIndex+1);
       $scope.columns.push(Nodes.getNodeChildren($scope.colPaths.join('')));
-      console.log($scope.colPaths);
     }
   })

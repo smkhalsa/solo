@@ -15,10 +15,10 @@ angular.module('resolver.services', [
     }
 
     // adds a child and returns the child's ID
-    Nodes.addChild = function(child, parentPath){
-      var ref = new Firebase("https://resolver.firebaseio.com/nodes" + path);
+    Nodes.addChild = function(childTitle, parentPath){
+      var ref = new Firebase("https://resolver.firebaseio.com/nodes" + parentPath);
       // return child ID
-      return ref.push({title: newNode});
+      return ref.push({title: childTitle});
     }
 
     return Nodes;

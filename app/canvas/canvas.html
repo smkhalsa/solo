@@ -3,10 +3,10 @@
     <div layout="column" ng-repeat="column in columns"  flex="50" flex-gt-md="20">
       <div class="searchArea" layout="row" layout-align="center center" layout-margin>
         <md-content>
-          <form name="submitItem" ng-submit="addItem(text); text=''"ng-show="colIndex === $index-1">
+          <form name="submitItem" ng-submit="submitItem.$valid && addItem(text); text=null"ng-show="colIndex === $index-1" novalidate>
             <md-input-container class="md-title" md-no-float>
               <!-- <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon> -->
-              <input ng-model="text" type="text" placeholder="Add new item">
+              <input ng-model="text" type="text" placeholder="Add new item" required>
             </md-input-container>
           </form>
         </md-content>
