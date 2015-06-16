@@ -11,7 +11,7 @@
           </form>
         </md-content>
       </div>
-      <div ng-class=" node === currentNode || $parent.$index === colIndex+1 ? 'selected' : 'normal'" layout="row" ng-repeat="node in column" layout-padding ng-click="setCurrent(node, $index, $parent.$index)">{{node.title}}</div>
+      <div class="md-body-2" ng-class="node === currentNode || $parent.$index === colIndex+1 ? 'selected' : 'normal'" layout="row" ng-repeat="node in column" layout-padding ng-click="setCurrent(node, $index, $parent.$index)">{{node.title}}</div>
     </div>
   </div>
   <!-- <div>{{current}}</div> -->
