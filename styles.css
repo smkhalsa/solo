@@ -1,0 +1,8 @@
+.grey {
+  background-color: lightgrey;
+  border: 1px solid white;
+}
+
+.searchArea {
+  height: 50px;
+}
