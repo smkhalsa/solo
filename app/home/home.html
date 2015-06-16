@@ -1,7 +1,7 @@
 <div ng-controller="HomeController" layout="row" layout-align="center center" layout-margin layout-padding>
   <md-content>
   {{test}}
-    <form name="newResolver" ng-submit="">
+    <form name="newResolver" ng-submit="createResolver(text)">
       <md-input-container class="md-title" md-no-float>
         <!-- <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon> -->
         <input ng-model="text" type="text" placeholder="Add new item">

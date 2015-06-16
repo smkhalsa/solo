@@ -6,7 +6,7 @@ angular.module('resolver', [
   'resolver.home'
 ])
 .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
-  $urlRouterProvider.otherwise('/canvas');
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
     .state('how_it_works', {
@@ -14,7 +14,7 @@ angular.module('resolver', [
       templateUrl: 'app/how_it_works/how_it_works.html'
     })
     .state('canvas', {
-      url: '/canvas',
+      url: '/canvas/:id',
       templateUrl: 'app/canvas/canvas.html'
     })
     .state('home', {
