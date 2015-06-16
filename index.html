@@ -9,10 +9,16 @@
   <body layout="column" ng-controller="AppCtrl">
     <md-toolbar layout="row" class="md-primary">
       <div class="md-toolbar-tools">
-        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+
+<!--         <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
           <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
-        </md-button>
-        <h1>resolver</h1>
+        </md-button> -->
+        <span ui-sref="home">Resolver</span>
+        <span flex></span>
+        <div ng-show="$state.includes('canvas')">
+          <span class="url" clip-copy="getTextToCopy()" clip-click="doSomething()">{{url}}</span>
+          <md-button class="md-accent">copy</md-button>
+        </div>
       </div>
     </md-toolbar>
 
@@ -30,6 +36,10 @@
     <!-- Firebase Dependencies -->
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+
+    <!-- ng-clip Dependencies -->
+    <script src="bower_components/zeroclipboard/dist/ZeroClipboard.Core.js"></script>
+    <script src="bower_components/ng-clip/dest/ng-clip.min.js"></script>
 
     <script src="app/app.js"></script>
     <script src="app/services/services.js"></script>

@@ -11,3 +11,7 @@
 .searchArea {
   height: 50px;
 }
+
+md-toolbar {
+  margin-bottom: 50px;
+}

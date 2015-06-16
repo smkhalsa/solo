@@ -2,9 +2,13 @@ angular.module('resolver', [
   'ui.router',
   'ngMaterial',
   'resolver.canvas',
-  'resolver.home'
+  'resolver.home',
+  'ngClipboard'
 ])
-.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider, ngClipProvider) {
+
+  ngClipProvider.setPath("../bower_components/zeroclipboard/dist/ZeroClipboard.swf");
+
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
@@ -24,8 +28,24 @@ angular.module('resolver', [
   $mdThemingProvider.theme('default')
       .primaryPalette('cyan')
       .accentPalette('indigo');
+
 })
-.controller('AppCtrl', function ($scope) {
+
+.controller('AppCtrl', function ($scope, $mdToast) {
+
+  $scope.url = window.location.href;
+
+  $scope.copyUrl = function($event){
+    $mdToast.show($mdToast.simple().position({'top':true}).content("Copied to clipboard!"));
+  }
+
+  $scope.getTextToCopy = function() {
+    return $scope.url;
+  }
+
+  $scope.doSomething = function() {
+    console.log('do something')
+  }
 
 });
 

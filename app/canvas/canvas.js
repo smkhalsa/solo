@@ -4,7 +4,9 @@ angular.module('resolver.canvas', [
     'firebase'
   ])
 
-  .controller('CanvasController', function($scope, $state, $stateParams, Nodes, $firebaseArray) {
+  .controller('CanvasController', function($scope, $state, $rootScope, $stateParams, Nodes, $firebaseArray) {
+
+    $rootScope.$state = $state;
 
     var rootNodes = [Nodes.getNodeChildren('/')];
 
@@ -16,9 +18,7 @@ angular.module('resolver.canvas', [
     $scope.currentCol;
 
     setTimeout(function(){
-      console.log('delay')
       for(var i = 0; i < rootNodes[0].length; i++ ) {
-        // console.log(rootNodes[0][i])
         if(rootNodes[0][i].$id === $scope.rootNode) {
           $scope.columns = [[rootNodes[0][i]]];
           $scope.$apply();
