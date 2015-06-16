@@ -7,7 +7,7 @@ angular.module('resolver', [
 ])
 .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider, ngClipProvider) {
 
-  ngClipProvider.setPath("../bower_components/zeroclipboard/dist/ZeroClipboard.swf");
+  ngClipProvider.setPath("//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.6/ZeroClipboard.swf");
 
   $urlRouterProvider.otherwise('/');
 

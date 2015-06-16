@@ -15,8 +15,8 @@
         </md-button> -->
         <span ui-sref="home">Resolver</span>
         <span flex></span>
-        <div ng-show="$state.includes('canvas')">
-          <span class="url" clip-copy="getTextToCopy()" clip-click="doSomething()">{{url}}</span>
+        <div ng-show="$state.includes('canvas')" clip-copy="url">
+          <span class="url">{{url}}</span>
           <md-button class="md-accent">copy</md-button>
         </div>
       </div>
@@ -38,8 +38,8 @@
     <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 
     <!-- ng-clip Dependencies -->
-    <script src="bower_components/zeroclipboard/dist/ZeroClipboard.Core.js"></script>
-    <script src="bower_components/ng-clip/dest/ng-clip.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.6/ZeroClipboard.min.js"></script>
+    <script src="//rawgit.com/asafdav/ng-clip/master/src/ngClip.js"></script>
 
     <script src="app/app.js"></script>
     <script src="app/services/services.js"></script>
