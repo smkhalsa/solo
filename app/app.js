@@ -1,8 +1,9 @@
-angular.module('blog', [
+angular.module('resolver', [
   'ui.router',
   'ngMaterial',
   'firebase',
-  'app.canvas'
+  'resolver.canvas',
+  'resolver.home'
 ])
 .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
   $urlRouterProvider.otherwise('/canvas');
@@ -15,6 +16,10 @@ angular.module('blog', [
     .state('canvas', {
       url: '/canvas',
       templateUrl: 'app/canvas/canvas.html'
+    })
+    .state('home', {
+      url: '/',
+      templateUrl: 'app/home/home.html'
     })
 
   $mdThemingProvider.theme('default')

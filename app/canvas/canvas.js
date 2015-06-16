@@ -1,4 +1,6 @@
-angular.module('app.canvas', ['firebase'])
+angular.module('resolver.canvas', [
+    'firebase'
+  ])
 
   .controller('CanvasController', function($scope, $firebaseArray) {
 
