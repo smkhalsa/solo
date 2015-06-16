@@ -1,9 +1,11 @@
 angular.module('resolver.home', [
     'resolver',
-    'resolver.canvas'
+    'resolver.canvas',
+    'resolver.services'
   ])
-  .controller('HomeController', function($scope, $state) {
+  .controller('HomeController', function($scope, $state, Nodes) {
     $scope.createResolver = function(item) {
-      $state.go('canvas', { id:item })
+      var nodeId = Nodes.addChild(item, '/');
+      $state.go('canvas', { id:nodeId })
     }
   })

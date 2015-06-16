@@ -18,7 +18,7 @@ angular.module('resolver.services', [
     Nodes.addChild = function(childTitle, parentPath){
       var ref = new Firebase("https://resolver.firebaseio.com/nodes" + parentPath);
       // return child ID
-      return ref.push({title: childTitle});
+      return ref.push({title: childTitle}).key();
     }
 
     return Nodes;
