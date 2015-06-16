@@ -1,7 +1,6 @@
 angular.module('resolver', [
   'ui.router',
   'ngMaterial',
-  'firebase',
   'resolver.canvas',
   'resolver.home'
 ])

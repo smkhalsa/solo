@@ -6,13 +6,22 @@ angular.module('resolver.services', [
 
     var Nodes = {};
 
-    Nodes.getNode = function(path) {
-      return new Firebase("https://resolver.firebaseio.com/nodes" + path)
+    Nodes.getNodeChildren = function(path) {
+      return $firebaseArray(new Firebase("https://resolver.firebaseio.com/nodes" + path));
     }
 
-    Nodes.getNodeChildren = function(path) {
-      return $firebaseArray(new Firebase("https://resolver.firebaseio.com/nodes" + path))
-    }
+    // Nodes.getRootNode = function(nodeId) {
+    //   var rootNodes = $firebaseArray(new Firebase("https://resolver.firebaseio.com/nodes"));
+    //   rootNodes.$loaded()
+    //     .then(function(nodes){
+    //       console.log('nodes: ', nodes)
+    //       for (var i = 0; i < rootNodes.length; i++) {
+    //         if(rootNodes[i].$id === nodeId) {
+    //           CanvasController.columns=[rootNodes[i]]
+    //         }
+    //       }
+    //     })
+    // }
 
     // adds a child and returns the child's ID
     Nodes.addChild = function(childTitle, parentPath){

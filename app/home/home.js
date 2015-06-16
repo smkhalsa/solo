@@ -1,6 +1,5 @@
 angular.module('resolver.home', [
     'resolver',
-    'resolver.canvas',
     'resolver.services'
   ])
   .controller('HomeController', function($scope, $state, Nodes) {
