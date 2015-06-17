@@ -1,10 +1,10 @@
 .normal {
-  background-color: lightgrey;
+  background-color: #E8EAF6;
   border: 1px solid white;
 }
 
 .selected {
-  background-color: grey;
+  background-color: #C5CAE9;
   border: 1px solid white;
 }
 

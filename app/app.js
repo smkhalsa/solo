@@ -27,8 +27,8 @@ angular.module('resolver', [
     })
 
   $mdThemingProvider.theme('default')
-      .primaryPalette('cyan')
-      .accentPalette('indigo');
+      .primaryPalette('indigo')
+      .accentPalette('light-blue');
 
 })
 

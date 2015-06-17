@@ -11,10 +11,8 @@
       <div class="md-toolbar-tools">
         <span ui-sref="home">Resolver</span>
         <span flex></span>
-        <div ng-show="$state.includes('canvas')" clip-copy="url" ng-click="copyToast()">
-          <span class="url">{{url}}</span>
-          <md-button class="md-accent">copy</md-button>
-        </div>
+        <span class="url" ng-show="$state.includes('canvas')" clip-copy="url" ng-click="copyToast()">{{url}}</span>
+        <md-button class="md-accent" ng-show="$state.includes('canvas')" clip-copy="url" ng-click="copyToast()">copy</md-button>
       </div>
     </md-toolbar>
 
