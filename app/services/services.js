@@ -30,5 +30,10 @@ angular.module('resolver.services', [
       return ref.push({title: childTitle}).key();
     }
 
+    Nodes.removeNode = function(path){
+      var ref = new Firebase("https://resolver.firebaseio.com/nodes" + path)
+      ref.remove();
+    }
+
     return Nodes;
   })

@@ -15,3 +15,8 @@
 md-toolbar {
   margin-bottom: 50px;
 }
+
+.node-title {
+  padding-left: 15px;
+  padding-right: 15px;
+}

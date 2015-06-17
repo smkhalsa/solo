@@ -21,7 +21,6 @@ angular.module('resolver.canvas', [
       for(var i = 0; i < rootNodes[0].length; i++ ) {
         if(rootNodes[0][i].$id === $scope.rootNode) {
           $scope.columns = [[rootNodes[0][i]]];
-          // $scope.$apply();
           $scope.setCurrent($scope.columns[0][0], 0, 0)
         }
       }
@@ -30,6 +29,12 @@ angular.module('resolver.canvas', [
     $scope.addItem = function(nodeTitle){
       var parentPath = $scope.colPaths.slice().join('');
       Nodes.addChild(nodeTitle, parentPath)
+    }
+
+    $scope.removeItem = function(node, index, colIndex){
+      var parentPath = $scope.colPaths.slice(0,colIndex+1).join('');
+      console.log(parentPath +"/"+ node.$id)
+      Nodes.removeNode(parentPath+"/"+node.$id);
     }
 
     $scope.setCurrent = function(node, index, colIndex) {
@@ -41,4 +46,5 @@ angular.module('resolver.canvas', [
       $scope.columns.splice(colIndex+1);
       $scope.columns.push(Nodes.getNodeChildren($scope.colPaths.join('')));
     }
+
   })
