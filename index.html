@@ -9,13 +9,9 @@
   <body layout="column" ng-controller="AppCtrl">
     <md-toolbar layout="row" class="md-primary">
       <div class="md-toolbar-tools">
-
-<!--         <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
-          <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
-        </md-button> -->
         <span ui-sref="home">Resolver</span>
         <span flex></span>
-        <div ng-show="$state.includes('canvas')" clip-copy="url">
+        <div ng-show="$state.includes('canvas')" clip-copy="url" ng-click="copyToast()">
           <span class="url">{{url}}</span>
           <md-button class="md-accent">copy</md-button>
         </div>

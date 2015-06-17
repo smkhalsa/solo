@@ -18,7 +18,8 @@ angular.module('resolver', [
     })
     .state('canvas', {
       url: '/canvas/:id',
-      templateUrl: 'app/canvas/canvas.html'
+      templateUrl: 'app/canvas/canvas.html',
+      controller: 'CanvasController'
     })
     .state('home', {
       url: '/',
@@ -31,21 +32,20 @@ angular.module('resolver', [
 
 })
 
-.controller('AppCtrl', function ($scope, $mdToast) {
+.controller('AppCtrl', function ($scope, $mdToast, $rootScope) {
 
-  $scope.url = window.location.href;
 
-  $scope.copyUrl = function($event){
-    $mdToast.show($mdToast.simple().position({'top':true}).content("Copied to clipboard!"));
+  // $scope.$apply();
+
+  $scope.copyToast = function($event){
+    // $mdToast.show($mdToast.simple().position({'top':true}).content("Copied to clipboard!"));
   }
 
-  $scope.getTextToCopy = function() {
-    return $scope.url;
-  }
-
-  $scope.doSomething = function() {
-    console.log('do something')
-  }
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+      if (toState.name == 'canvas') {
+        $scope.url = window.location.origin + "/#/canvas/" + toParams.id;
+      }
+  });
 
 });
 

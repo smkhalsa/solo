@@ -21,7 +21,7 @@ angular.module('resolver.canvas', [
       for(var i = 0; i < rootNodes[0].length; i++ ) {
         if(rootNodes[0][i].$id === $scope.rootNode) {
           $scope.columns = [[rootNodes[0][i]]];
-          $scope.$apply();
+          // $scope.$apply();
           $scope.setCurrent($scope.columns[0][0], 0, 0)
         }
       }
