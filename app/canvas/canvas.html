@@ -6,7 +6,7 @@
           <form name="submitItem" ng-submit="submitItem.$valid && addItem(text); text=null"ng-show="colIndex === $index-1" novalidate>
             <md-input-container class="md-title" md-no-float>
               <!-- <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon> -->
-              <input ng-model="text" type="text" placeholder="Add new item" required>
+              <input ng-model="text" type="text" placeholder="Add new item" autofocus>
             </md-input-container>
           </form>
         </md-content>
