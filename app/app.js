@@ -34,12 +34,27 @@ angular.module('resolver', [
 
 .controller('AppCtrl', function ($scope, $mdToast, $rootScope) {
 
+  $scope.toastPosition = {
+      bottom: false,
+      top: true,
+      left: false,
+      right: true
+    };
 
-  // $scope.$apply();
+  $scope.getToastPosition = function() {
+    return Object.keys($scope.toastPosition)
+      .filter(function(pos) { return $scope.toastPosition[pos]; })
+      .join(' ');
+  };
 
-  $scope.copyToast = function($event){
-    // $mdToast.show($mdToast.simple().position({'top':true}).content("Copied to clipboard!"));
-  }
+  $scope.copyToast = function() {
+      $mdToast.show(
+        $mdToast.simple()
+          .content('Copied to clipboard!')
+          .position($scope.getToastPosition())
+          .hideDelay(1000)
+      );
+    };
 
   $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
       if (toState.name == 'canvas') {
